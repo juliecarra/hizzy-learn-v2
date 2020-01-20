@@ -1,0 +1,27 @@
+<div class="card-container">
+  <a href="/profile" class="pro">BACK</a>
+  <div class="myvidi"><a href="/my-videos" class="">MY VIDEOS</a></div>
+  <h2 class="current_course">My course</h2>
+
+  {{#if msg}}
+  <div>{{msg.txt}}</div>
+  <div>Go to your <a href="/profile">profile</a> and select a new course</div>
+  {{/if}}
+  {{#if courseVideos}}
+  <h4>Here's your next videos!</h4>
+  {{!-- Initial width : 640 ; height : 385 --}}
+  <div id="not-viewed-div">
+    {{#each courseVideos}}
+    <p>
+      <iframe class="youtube-player" type="text/html" width="732" height="500" src="{{this.url}}"
+        allowfullscreen></iframe>
+      <label for="add-viewed" class="added"></label>
+      <div class=" buutn">
+
+        <button class="add-viewed-btn" id="{{this._id}}">Add to viewed list</button>
+      </div>
+    </p>
+
+    {{/each}}
+  </div>
+  {{/if}}

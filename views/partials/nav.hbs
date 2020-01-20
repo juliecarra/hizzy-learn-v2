@@ -1,0 +1,72 @@
+{{!-- <div class="navigation">
+
+    <header class="header">
+        <a href="/" class="logo">Hizzy-Learn</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login">Sign In</a></li>
+
+        </ul>
+    </header>
+
+    {{#if isAdmin}}
+    <li><a href="/manage-all">Manage db</a></li>
+    {{/if}}
+
+    <ul>
+        {{#if user}}
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Log Out</a></li>
+
+        {{else}}
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/signin">Sign In</a></li>
+        {{/if}}
+    </ul>
+
+
+    </ul>
+
+    </nav> --}}
+
+
+<div class="navigation">
+
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+
+    </label>
+    <div class="navigation__background">&nbsp;</div>
+
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="/" class="navigation__link"> Home</a></li>
+            <li class="navigation__item"><a href="/my-course" class="navigation__link"> My course</a>
+            </li>
+            <li class="navigation__item"><a href="/my-videos" class="navigation__link"> My videos</a>
+            </li>
+
+            {{#if isAdmin}}
+            <li class="navigation__item"><a href="/manage-all" class="navigation__link"> Manage
+                    databases</a></li>
+            {{/if}}
+
+            {{!-- <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span> Undefined yet</a></li> --}}
+            <ul>
+                {{#if user}}
+
+                <li class="navigation__item"><a href="/profile" class="navigation__link">Profile</a></li>
+                <li class="navigation__item"><a href="/logout" class="navigation__link">Logout</a></li>
+                {{else}}
+                <li class="navigation__item"><a href="/signup" class="navigation__link">Signup</a></li>
+                <li class="navigation__item"><a href="/login" class="navigation__link">Login</a></li>
+                {{/if}}
+            </ul>
+
+
+        </ul>
+
+    </nav>

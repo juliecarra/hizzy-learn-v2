@@ -1,0 +1,26 @@
+<h2>Edit video</h2>
+
+{{#if msg}}
+<p>{{msg}}</p>
+{{/if}}
+{{#if video}}
+<form action="/video-edit" method="post" id="video-edit-form">
+  <label for="name">Video name</label>
+  <input type="text" name="name" id="video-name" value="{{video.name}}">
+  <label for="url">Url</label>
+  <input type="url" name="url" id="video-url" value="{{video.url}}">
+  <label for="difficulty_tag">Difficulty</label>
+  <select name="difficulty_tag" id="difficulty_tag" value="{{video.difficulty_tag}}">
+    <option value="Beginner">Beginner</option>
+    <option value="Intermediate">Intermediate</option>
+    <option value="Master">Master</option>
+  </select>
+  <label for="description">Description</label>
+  <input type="text" name="description" id="description" value="{{video.description}}">
+  <label for="front_end">Front end</label>
+  <input type="checkbox" name="front_end" id="front_end">
+  <label for="back_end">Back end</label>
+  <input type="checkbox" name="back_end" id="back_end">
+  <button>Submit</button>
+</form>
+{{/if}}

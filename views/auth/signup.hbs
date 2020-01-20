@@ -1,0 +1,44 @@
+<div class="signup">
+  <div class="signup-header">
+    <span class="title__signup">SIGNUP</span>
+    {{!-- <h1 class="title__signup">Signup</h1> --}}
+  </div>
+  <div class="">
+    <div class="signup-form">
+      <form action="/signup" method="post" id="form-container">
+
+        <label for="username" class="signup__label">
+          <h3>Username</h3>
+        </label>
+        <input type="text" name="username" class="input__signup" placeholder="Enter your username">
+        {{!--value="juloup"--}}
+
+        <hr>
+
+        <label for="email" class="signup__label">
+          <h3>Email</h3>
+        </label>
+        <input type="text" name="email" class="input__signup" id="email__margin" placeholder="Enter your email">
+        {{!--value="toto.fr"--}}
+
+        <hr>
+
+        <label for="password" class="signup__label">
+          <h3>Password</h3>
+        </label>
+        <input type="password" name="password" class="input__signup" placeholder="Enter your password" />
+        {{!--value="1234"--}}
+
+        <hr>
+
+        <div class="wrap__button">
+          <button class="signup__button primary" type="submit">Signup</button>
+          <br>
+        </div>
+        {{#if message}}
+        <div class="error__message">{{message}}</div>
+        {{/if}}
+      </form>
+    </div>
+  </div>
+</div>

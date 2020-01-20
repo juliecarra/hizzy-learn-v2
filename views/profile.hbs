@@ -1,0 +1,101 @@
+<div class="card-container">
+  {{!-- <span class="pro">NEW</span> --}}
+  <a href="/logout" class="pro">LOGOUT</a>
+  <div class="myvidi"><a href="/my-course" class="">MY COURSE</a></div>
+  <img class="round" src="{{user.profilePhoto}}" alt="user" />
+
+  <h3>{{user.username}}</h3>
+  <br>
+  <div class="buttons">
+
+
+    {{#unless user.profilePhoto}}
+    <h2>No profile picture! <br> Please upload your photo</h2>
+    {{/unless}}
+    <form id="photoForm" action="/profile" method="post" enctype="multipart/form-data">
+
+
+      <label class="primary"> Change your picture
+
+
+
+        <input type="file" name="profilePhoto" class="photoInput">
+      </label>
+
+
+      <button type=" submit" class="primary ghost">Save your picture</button>
+
+
+    </form>
+
+  </div>
+  <br>
+  <div class="skills">
+
+
+    <h6>Make some choices</h6>
+    <br>
+    <ul>
+      <li>
+        <div class="move_level">
+          <label for="level" class="choices">Choose your level</label>
+          <select name="level" id="level-select" value="{{this.level}}">
+            <option value="" selected disabled hidden>Level</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Master">Master</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <label for="course" class="choices choices-course">Choose your course</label>
+        <select name="course" id="course-select">
+          <option value="" selected disabled hidden>Course</option>
+          <option value="" disabled>Select your level first</option>
+
+        </select>
+      </li>
+
+      <br>
+      <div class="btn-course primary">
+        <button id="follow-course-btn">Submit</button>
+      </div>
+    </ul>
+    <br>
+    <div class="descr">
+      <h1 class="descri">Hey, {{user.username}}!</h1>
+      <br>
+      <h3 class="userDescription">We are really excited that you are part of the Hizzy-Learn community. <br></h3>
+      <br>
+      <div id="profile-course-text">
+
+        You have
+        {{#unless user.course}}
+        not picked a course yet.
+        {{/unless}}
+        {{#if user.level}}
+        chosen the <b>{{user.level}}</b> level and are currently following the <b>{{user.course}} course.
+          <br>
+          <p class="buut"><a href="/my-course" class="go primary ghost"> Let your journey
+              begin!</a></p>
+
+          {{!-- <div class="buut"><a href="/my-course" class="go primary ghost"> Let your journey
+              begin!</a></div> --}}
+
+
+          {{/if}}
+      </div>
+    </div>
+
+    {{#if message }}
+    <div class=" error-message w50">{{message}}
+    </div>
+    {{/if}}
+  </div>
+
+
+
+
+
+</div>
+</div>

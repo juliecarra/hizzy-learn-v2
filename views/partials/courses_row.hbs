@@ -1,0 +1,16 @@
+<td class="table-division">
+  <div class="courses">{{this.course_name}}</div>
+</td>
+<td class="table-division">
+  <div class="courses">{{this.course_difficulty}}</div>
+</td>
+<td class="table-division courses">
+  <div class="courses">{{this.course_description}}</div>
+</td>
+<td class="table-division courses">
+  <a href="/course-edit/{{this._id}}" data-id-course="{{this._id}}" class="fa fa-edit table-icon edit-icon">Edit</a>
+</td>
+<td class="table-division courses">
+  <button href="/course-delete/{{this._id}}" id="delete_btn" class="fa fa-trash table-icon delete-icon"
+    data-id-video="{{this._id}}" aria-hidden="true">Delete</button>
+</td>

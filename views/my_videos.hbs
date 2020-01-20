@@ -1,0 +1,18 @@
+<div class="card-container">
+    {{!-- <span class="pro">NEW</span> --}}
+    <a href="/my-course" class="pro">BACK</a>
+
+    <div class="myvidi"><a href="/LOGOUT" class="">LOGOUT</a></div>
+    <h2 class="current_video">My videos</h2>
+
+
+    <p class="text-video">Here you can find all the videos you've watched</p>
+
+    {{#each viewedVideos}}
+    <div class="move_video">
+        <iframe class=" youtube-player" type="text/html" width="332" height="200" src="{{this.url}}"
+            allowfullscreen></iframe>
+        {{!-- <label for="remove-viewed" class="removed">Remove from viewed list</label>
+        <button class="remove-viewed-btn" id="{{this._id}}">Remove</button> --}}
+    </div>
+    {{/each}}

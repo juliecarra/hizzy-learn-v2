@@ -1,0 +1,61 @@
+{{#if msg}}
+<p>{{msg}}</p>
+{{/if}}
+<div class="big-container manage-courses-wrapper">
+  <h3 class="manage-courses-title">Manage Courses</h3>
+  <a href="/course-add">Add a course</a>
+  <table class="courses-manage-table">
+    <thead>
+      <tr class="table-row">
+        <th class="table-head">Course Name</th>
+        <th class="table-head">Difficulty</th>
+        <th class="table-head">Description</th>
+        <th class="table-head">Edit</th>
+        <th class="table-head">Delete</th>
+      </tr>
+    </thead>
+    <tbody class="courses_size">
+      {{#each courses}}
+      <tr class="table-row" id="{{this._id}}">
+        {{> courses_row}}
+      </tr>
+      {{/each}}
+      {{#unless courses}}
+      <tr>
+        <td colspan="8">Sorry no courses yet</td>
+      </tr>
+      {{/unless}}
+    </tbody>
+  </table>
+</div>
+<div class="big-container manage-video-wrapper">
+  <h3 class="manage-video-title">Manage Videos</h3>
+  <a href="/video-add">Add a video</a>
+  <table class="product-manage-table">
+    <thead>
+      <tr class="table-row">
+        <th class="table-head">Video Name</th>
+        <th class="table-head" id="url">Url</th>
+        <th class="table-head">Difficulty</th>
+        <th class="table-head">Description</th>
+        <th class="table-head">Front end</th>
+        <th class="table-head">Back end</th>
+        <th class="table-head">DB ID</th> {{!-- for adding to course --}}
+        <th class="table-head">Edit</th>
+        <th class="table-head">Delete</th>
+      </tr>
+    </thead>
+    <tbody class="videos_size">
+      {{#each videos}}
+      <tr class="table-row" id="{{this._id}}">
+        {{> videos_row}}
+      </tr>
+      {{/each}}
+      {{#unless videos}}
+      <tr>
+        <td colspan="9">Sorry no videos yet</td>
+      </tr>
+      {{/unless}}
+    </tbody>
+  </table>
+</div>
